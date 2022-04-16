@@ -1,12 +1,12 @@
 // @ts-nocheck
 
-import React, { useRef, useEffect } from 'react';
-import { plugin } from '../core/umiExports';
+import React, { useRef, useEffect } from "react";
+import { plugin } from "../core/umiExports";
 import { ApplyPluginsType } from 'umi';
-import { useModel } from '../plugin-model/useModel';
-if (typeof useModel !== 'function') {
+import { useModel } from "../plugin-model/useModel";
+if (typeof useModel !== "function") {
   throw new Error(
-    '[plugin-initial-state]: useModel is not a function, @umijs/plugin-model is required.',
+    "[plugin-initial-state]: useModel is not a function, @umijs/plugin-model is required."
   );
 }
 
@@ -19,11 +19,11 @@ export default (props: Props) => {
   // 获取用户的配置，暂时只支持 loading
   const useRuntimeConfig =
     plugin.applyPlugins({
-      key: 'initialStateConfig',
+      key: "initialStateConfig",
       type: ApplyPluginsType.modify,
       initialValue: {},
     }) || {};
-  const { loading = false } = useModel('@@initialState') || {};
+  const { loading = false } = useModel("@@initialState") || {};
   useEffect(() => {
     if (!loading) {
       appLoaded.current = true;

@@ -6,12 +6,12 @@ import { plugin } from './plugin';
 
 export function getRoutes() {
   const routes = [
-    {
-      path: '/',
-      exact: true,
-      component: require('@/pages/index.tsx').default,
-    },
-  ];
+  {
+    "path": "/",
+    "exact": true,
+    "component": require('@/pages/index.tsx').default
+  }
+];
 
   // allow user to extend routes
   plugin.applyPlugins({

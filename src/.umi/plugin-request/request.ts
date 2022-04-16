@@ -18,13 +18,11 @@ import {
 
 import { ApplyPluginsType } from 'umi';
 import { history, plugin } from '../core/umiExports';
-
+            
 // decoupling with antd UI library, you can using `alias` modify the ui methods
 // @ts-ignore
 import { message, notification } from '@umijs/plugin-request/lib/ui';
-import useUmiRequest, {
-  UseRequestProvider,
-} from '/Users/gz00064ml/Documents/study/umi-demo/node_modules/@ahooksjs/use-request';
+import useUmiRequest, { UseRequestProvider } from '/Users/gz00064ml/Documents/study/umi-demo/node_modules/@ahooksjs/use-request';
 import {
   BaseOptions,
   BasePaginatedOptions,
@@ -82,7 +80,7 @@ function useRequest<Item = any, U extends Item = any>(
 ): PaginatedResult<Item>;
 function useRequest(service: any, options: any = {}) {
   return useUmiRequest(service, {
-    formatResult: (result) => result?.data,
+    formatResult: result => result?.data,
     requestMethod: (requestOptions: any) => {
       if (typeof requestOptions === 'string') {
         return request(requestOptions);

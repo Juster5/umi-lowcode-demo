@@ -8,34 +8,38 @@ import { ApplyPluginsType } from '/Users/gz00064ml/Documents/study/umi-demo/node
 import { renderClient } from '/Users/gz00064ml/Documents/study/umi-demo/node_modules/@umijs/renderer-react';
 import { getRoutes } from './core/routes';
 
-const getClientRender = (args: { hot?: boolean; routes?: any[] } = {}) =>
-  plugin.applyPlugins({
-    key: 'render',
-    type: ApplyPluginsType.compose,
-    initialValue: () => {
-      const opts = plugin.applyPlugins({
-        key: 'modifyClientRenderOpts',
-        type: ApplyPluginsType.modify,
-        initialValue: {
-          routes: args.routes || getRoutes(),
-          plugin,
-          history: createHistory(args.hot),
-          isServer: process.env.__IS_SERVER,
-          rootElement: 'root',
-          defaultTitle: ``,
-        },
-      });
-      return renderClient(opts);
-    },
-    args,
-  });
+
+
+
+const getClientRender = (args: { hot?: boolean; routes?: any[] } = {}) => plugin.applyPlugins({
+  key: 'render',
+  type: ApplyPluginsType.compose,
+  initialValue: () => {
+    const opts = plugin.applyPlugins({
+      key: 'modifyClientRenderOpts',
+      type: ApplyPluginsType.modify,
+      initialValue: {
+        routes: args.routes || getRoutes(),
+        plugin,
+        history: createHistory(args.hot),
+        isServer: process.env.__IS_SERVER,
+        rootElement: 'root',
+        defaultTitle: ``,
+      },
+    });
+    return renderClient(opts);
+  },
+  args,
+});
 
 const clientRender = getClientRender();
 export default clientRender();
 
-window.g_umi = {
-  version: '3.5.22',
-};
+
+    window.g_umi = {
+      version: '3.5.22',
+    };
+  
 
 // hot module replacement
 // @ts-ignore
