@@ -20,7 +20,7 @@ export default function IndexPage() {
     });
 
     (async function main() {
-      // await plugins.register(scenarioSwitcher);
+      await plugins.register(scenarioSwitcher);
       await registerPlugins();
 
       init(

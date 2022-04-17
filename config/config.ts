@@ -1,4 +1,4 @@
-// var buildPpluginReactApp = require('build-plugin-react-app')
+// var { buildPpluginReactApp } = require('build-plugin-react-app')
 
 export default {
   publicPath: '/',

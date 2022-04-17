@@ -32,8 +32,6 @@
     "@alilc/lowcode-setter-title": "^1.0.2",
     "@ant-design/pro-layout": "^6.5.0",
     "@umijs/plugin-sass": "^1.1.1",
-    "react": "17.x",
-    "react-dom": "17.x",
     "umi": "^3.5.22"
   },
   "devDependencies": {
@@ -42,8 +40,8 @@
     "@alilc/lowcode-engine-ext": "^1.0.0",
     "@alilc/lowcode-types": "^1.0.0",
     "@types/events": "^3.0.0",
-    "@types/react": "^17.0.0",
-    "@types/react-dom": "^17.0.0",
+    "@types/react": "^16.8.3",
+    "@types/react-dom": "^16.8.2",
     "@types/streamsaver": "^2.0.0",
     "@umijs/preset-react": "1.x",
     "@umijs/test": "^3.5.22",
